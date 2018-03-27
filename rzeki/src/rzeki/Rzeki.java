@@ -11,6 +11,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Random;
+import java.util.TreeSet;
 
 /**
  *
@@ -66,7 +67,15 @@ public class Rzeki {
                 najdluzsza = rz;
             }
         }
+        System.out.println("Najdluzsza rzeka to:"+najdluzsza);
         
+        TreeSet<Rzeka> set = new TreeSet();
+        for(Morze m : map.keySet())
+        {
+            List<Rzeka> list = map.get(m);
+            set.addAll(list);
+        }
+        System.out.println(set);
     }
     
 }
